@@ -2,7 +2,6 @@ from itertools import repeat
 from collections import deque
 t = int(input())
 
-
 for i in range(t):
     n = int(input())
     if n == 0:
@@ -20,9 +19,9 @@ for i in range(t):
                 alive = False
                 q = deque()
                 q.append((j,k))
+                visited[j][k] = True
                 while q:
                     u = q.popleft()
-                    visited[u[0]][u[1]] = True
                     if g[u[0]][u[1]] == "x" and not alive:
                         ships += 1
                         alive = True
